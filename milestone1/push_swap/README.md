@@ -172,17 +172,20 @@ double	compute_disorder(t_stack *a)
 実行例：
 
 ```bash
-./push_swap --bench 4 2 1 3
+./push_swap --bench $(shuf -i 1-500 -n 500 | tr '\n' ' ')
 ```
 
-出力例：
+出力例（500個のランダムな入力の場合）：
 
 ```text
-[bench] disorder: 49.93%
-[bench] strategy: Adaptive / O(n√n)
+[bench] disorder:  49.93%
+[bench] strategy:  Adaptive / O(n√n)
 [bench] total_ops: 7997
-...
+[bench] sa: ...  sb: ...  ss: ...  pa: ...  pb: ...
+[bench] ra: ...  rb: ...  rr: ... rra: ... rrb: ...  rrr:...
 ```
+
+※ 要素数が5個以下の場合は、選択された戦略に関係なく小規模ソート（2〜5個専用）が使われます。
 
 ---
 
@@ -212,7 +215,7 @@ make re
 ./push_swap 4 2 1 3
 ```
 
-戦略を明示的に指定する場合：
+戦略を明示的に指定する場合（オプションは数値より前に置きます。戦略オプションを指定しない場合は `--adaptive` として動作します）：
 
 ```bash
 ./push_swap --simple 4 2 1 3
@@ -236,12 +239,13 @@ make re
 
 ## Error Handling
 
-以下の場合は標準エラー出力へ `Error` を表示します。
+以下の場合は標準エラー出力へ `ERROR` を表示します。
 
 - 整数以外の入力
 - int範囲外の値
 - 重複値
 - 不正なオプション
+- 異なる戦略オプションの同時指定（例: `--simple --medium`）
 
 ---
 

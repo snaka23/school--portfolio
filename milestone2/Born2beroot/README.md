@@ -114,7 +114,7 @@ ssh -p 2222 snakagaw@localhost
 
 ## Tips / Troubleshooting(補足)
 
-作業中に発生した、再現しやすい2つのトラブルとその対処法をまとめます。
+作業中に発生した、再現しやすいトラブルとその対処法をまとめます。
 
 ### cronの`@reboot`が発火したか確認する方法
 
@@ -128,11 +128,11 @@ sudo journalctl -u cron -b --no-pager | grep monitoring.sh
 
 ## Resources(参考資料)
 
-- Born2beRoot 課題文: [原文PDF](B2B.pdf) / [日本語訳](B2B_ja.md)
+- Born2beRoot 課題文（原文PDF・日本語訳。本リポジトリには未収録）
 - [Debian公式ドキュメント](https://www.debian.org/doc/)
 - [Debian Handbook](https://debian-handbook.info/)
 - `man crontab(5)`, `man sudoers(5)`, `man sshd_config(5)`, `man pam_pwquality(8)`
-- 用語集: `GLOSSARY.md`
+- 用語集: `GLOSSARY.md`（本リポジトリには未収録）
 
 ### AIの利用について
 
@@ -140,7 +140,7 @@ sudo journalctl -u cron -b --no-pager | grep monitoring.sh
 
 - 課題文(英語)の日本語訳・専門用語の解説(`GLOSSARY.md`)
 - 各設定の「なぜそうするのか」という背景の説明・質問への回答
-- 作業内容を教科書形式のノートとして整理する手伝い(`STUDY_01`〜`04`, `PROGRESS.md`)
+- 作業内容を教科書形式のノートとして整理する手伝い(`STUDY_01`〜`04`, `PROGRESS.md`。本リポジトリには未収録)
 - 本`README.md`の構成
 
 コマンドの実行結果やエラーの解釈はAIに聞きながら進めたが、実際の設定変更・コマンド入力・動作確認はすべて自分で行った。
